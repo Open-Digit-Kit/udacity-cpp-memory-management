@@ -251,6 +251,7 @@ CMakeFiles/membot.dir/src/chatgui.cpp.o: ../src/chatbot.h
 CMakeFiles/membot.dir/src/chatgui.cpp.o: ../src/chatgui.cpp
 CMakeFiles/membot.dir/src/chatgui.cpp.o: ../src/chatgui.h
 CMakeFiles/membot.dir/src/chatgui.cpp.o: ../src/chatlogic.h
+CMakeFiles/membot.dir/src/chatgui.cpp.o: ../src/graphnode.h
 CMakeFiles/membot.dir/src/chatgui.cpp.o: /usr/include/wx-3.0/wx/accel.h
 CMakeFiles/membot.dir/src/chatgui.cpp.o: /usr/include/wx-3.0/wx/access.h
 CMakeFiles/membot.dir/src/chatgui.cpp.o: /usr/include/wx-3.0/wx/affinematrix2d.h

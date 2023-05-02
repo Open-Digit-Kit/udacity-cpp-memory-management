@@ -252,6 +252,7 @@ CMakeFiles/membot.dir/src/chatgui.cpp.o
  /home/workspace/CppND-Memory-Management-Chatbot/src/chatgui.cpp
  /home/workspace/CppND-Memory-Management-Chatbot/src/chatgui.h
  /home/workspace/CppND-Memory-Management-Chatbot/src/chatlogic.h
+ /home/workspace/CppND-Memory-Management-Chatbot/src/graphnode.h
  /usr/include/wx-3.0/wx/accel.h
  /usr/include/wx-3.0/wx/access.h
  /usr/include/wx-3.0/wx/affinematrix2d.h
