@@ -37,6 +37,7 @@ ChatBot::~ChatBot()
     // deallocate heap memory
     if(_image != NULL) // Attention: wxWidgets used NULL and not nullptr
     {
+      	delete _image;
         _image = NULL;
     }
 }
@@ -47,17 +48,19 @@ ChatBot::~ChatBot()
 // Copy constructor
 ChatBot::ChatBot(const ChatBot &source)
 {
-    std::cout << "Task #2 Copy Constructor" << std::endl;
+    std::cout << "ChatBot Copy Constructor" << std::endl;
     _image = new wxBitmap(*source._image);
     _currentNode = source._currentNode;
     _rootNode = source._rootNode;
     _chatLogic = source._chatLogic;
+  
+	_chatLogic->SetChatbotHandle(this);
 }
 
 // Copy assignment operator
 ChatBot &ChatBot::operator=(const ChatBot &source)
 {
-    std::cout << "Task #2 Copy Assignment Operator" << std::endl;
+    std::cout << "ChatBot Copy Assignment Operator" << std::endl;
     if (this == &source)
     {
         return *this;
@@ -68,29 +71,27 @@ ChatBot &ChatBot::operator=(const ChatBot &source)
     _currentNode = source._currentNode;
     _rootNode = source._rootNode;
     _chatLogic = source._chatLogic;
-
+  
+	_chatLogic->SetChatbotHandle(this);
     return *this;
 }
 
 // Move constructor
 ChatBot::ChatBot(ChatBot &&source)
 {
-    std::cout << "Task #2 Move Constructor" << std::endl;
+    std::cout << "ChatBot Move Constructor" << std::endl;
     _image = source._image;
     _currentNode = source._currentNode;
     _rootNode = source._rootNode;
     _chatLogic = source._chatLogic;
-
-    source._image = nullptr;
-    source._currentNode = nullptr;
-    source._rootNode = nullptr;
-    source._chatLogic = nullptr;
+  
+  	_chatLogic->SetChatbotHandle(this);
 }
 
 // Move assignment operator
 ChatBot &ChatBot::operator=(ChatBot &&source)
 {
-    std::cout << "Task #2 Move Assignment Operator" << std::endl;
+    std::cout << "ChatBot Move Assignment Operator" << std::endl;
     if (this == &source)
     {
         return *this;
@@ -102,7 +103,7 @@ ChatBot &ChatBot::operator=(ChatBot &&source)
     _currentNode = source._currentNode;
     _rootNode = source._rootNode;
     _chatLogic = source._chatLogic;
-
+	_chatLogic->SetChatbotHandle(this);
     source._image = nullptr;
     source._currentNode = nullptr;
     source._rootNode = nullptr;
